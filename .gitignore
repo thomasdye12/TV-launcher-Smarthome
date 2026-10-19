@@ -18,3 +18,10 @@ node_modules/
 /backend/deploy/
 /backend/tests/aidan-room.test.php
 /backend/tests/room-state.test.php
+
+# Samsung signing material and generated/private deployment outputs.
+/samsung/dist/
+/samsung/deployment.local.json
+*.wgt
+*.p12
+*.pfx

@@ -1,5 +1,7 @@
 # Projector Launcher
 
+An experimental [Samsung Tizen target](samsung/README.md) now reuses the hosted UI. See its [feature coverage and completion plan](samsung/FEATURES.md): HDMI selection was tested in the precursor, but Back after HDMI and full-screen app retention remain unresolved. Android instructions below remain unchanged.
+
 A tiny Android TV launcher for projector-style setups.
 
 The first version intentionally does very little:

@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+body { background: #101d24; color: #f5f4e9; font-family: Arial, sans-serif; transition: background-color .25s; }
+main { width: 100%; height: 100%; padding: 5vh 6vw; }
+header { display: flex; justify-content: space-between; align-items: center; font-size: 1.5vw; color: #a9bfc7; }
+.brand { letter-spacing: .2em; font-weight: bold; }
+.intro { margin-top: 8vh; }
+.eyebrow { color: #bded96; font-size: 1.2vw; letter-spacing: .2em; }
+h1 { margin: 1.7vh 0; font-size: 5.3vw; letter-spacing: -.045em; }
+p { font-size: 1.65vw; color: #b5c5ca; margin: 0; }
+.cards { display: flex; margin-top: 6vh; }
+button { width: 32%; height: 29vh; margin-right: 2%; padding: 2vw; text-align: left; background: #22333b; border: .22vw solid transparent; border-radius: 1.2vw; color: #f5f4e9; font-family: inherit; cursor: pointer; }
+button:last-child { margin-right: 0; }
+button:focus { outline: none; border-color: #c4f49c; background: #304437; box-shadow: 0 0 0 .3vw rgba(196,244,156,.15); }
+button strong, button > span { display: block; }
+button strong { font-size: 1.8vw; margin-top: 2vh; }
+button > span:last-child { font-size: 1.25vw; color: #b5c5ca; margin-top: 1vh; }
+.number { font-size: 4vw; height: 9vh; line-height: 9vh; color: #c4f49c; }
+.swatches { height: 9vh; padding-top: 2vh; }
+.swatches i { display: inline-block; height: 3.5vw; width: 3.5vw; background: #bfe99d; border-radius: 50%; margin-right: .6vw; }
+.swatches i:nth-child(2) { background: #d5b8ef; }
+.swatches i:nth-child(3) { background: #f4c098; }
+footer { display: flex; justify-content: space-between; margin-top: 5vh; font-size: 1.1vw; color: #a9bfc7; }
+.dot { display: inline-block; background: #c4f49c; width: .6vw; height: .6vw; border-radius: 50%; margin-right: .6vw; }
+.separator { margin: 0 1vw; }
+#message { margin-top: 2.5vh; font-size: 1.3vw; color: #c4f49c; }
+
+[hidden] { display: none !important; }
+html { background: transparent; }
+body.viewing { background: transparent; transition: none; }
+#watching { position: absolute; bottom: 5vh; left: 6vw; padding: 1.2vw 1.8vw; background: rgba(16,29,36,.9); border-radius: .8vw; font-size: 1.5vw; }
+
+#remote-ui {position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#101318;z-index:5}
+.local-actions {display:flex;margin-top:2vh}.local-actions button {height:6vh;padding:1vh 1vw;font-size:1.2vw}
+footer {margin-top:2vh}
+
+#watch-focus {position:absolute;top:0;left:0;width:1px;height:1px;outline:none;background:transparent;}
+
+/* Temporary inset test: transparent centre, visible frame owned by the app. */
+body.viewing::after {content:"";position:absolute;top:0;right:0;bottom:0;left:0;border:2vh solid #22333b;pointer-events:none;}
+body.viewing #watching {z-index:2;}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+deployment.local.json
+*.wgt
+*.p12
+*.pfx
+*.pem
+*.key
+.buildResult/

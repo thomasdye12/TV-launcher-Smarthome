@@ -1,0 +1,24 @@
+name: Shared web and Samsung target
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  web-and-samsung:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            backend/package-lock.json
+            samsung/package-lock.json
+      - run: npm --prefix backend ci
+      - run: npm --prefix samsung ci
+      - run: npm --prefix backend test
+      - run: npm --prefix samsung run build
+      - run: npm --prefix samsung test
+      - run: node samsung/scripts/configure.cjs samsung/deployment.example.json
