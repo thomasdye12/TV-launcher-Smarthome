@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello TV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <iframe id="remote-ui" title="TV launcher" hidden sandbox="allow-scripts allow-same-origin"></iframe>
+  <main id="menu">
+    <header><span class="brand">TV LAUNCHER / LOCAL CONTROLS</span><span id="clock"></span></header>
+    <section class="intro"><div class="eyebrow">YOUR SCREEN. YOUR CHOICE.</div><h1>TV controls</h1><p>Choose an HDMI input. Back returns here only while the app remains active.</p></section>
+    <section class="cards" aria-label="HDMI inputs">
+      <button><span class="number">01</span><strong>HDMI 1</strong><span>Press OK to watch</span></button>
+      <button><span class="number">02</span><strong>HDMI 2</strong><span>Press OK to watch</span></button>
+      <button><span class="number">03</span><strong>HDMI 3</strong><span>Press OK to watch</span></button>
+    </section>
+<div class="local-actions"><button id="return-ui">Return to launcher</button><button id="retry-ui">Reload launcher</button><button id="exit-app">Exit app</button></div>
+    <footer><div><span class="dot"></span><span id="runtime">HDMI input selector</span></div><div>← → ↑ ↓ Move &nbsp; · &nbsp; OK Watch &nbsp; · &nbsp; Back Exit</div></footer>
+    <div id="message" role="status" aria-live="polite">Choose an HDMI input. Turn on the connected device for a picture.</div>
+  </main>
+  <div id="watch-focus" tabindex="-1" hidden aria-label="HDMI viewing controls"></div>
+  <div id="watching" hidden role="status"></div>
+  <script src="deployment.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

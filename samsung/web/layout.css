@@ -1,0 +1,19 @@
+/* Chromium 56: flex layout replaces grid and flex gap. */
+.wallpaper,.scrim {top:0;right:0;bottom:0;left:0}
+.content-grid {display:flex;gap:0}
+.primary-column {flex:1;gap:0}
+.controls-panel {width:27vw;margin-left:3.5vw}
+.content-grid.no-controls .primary-column {width:100%}
+.source-grid,.quick-grid {display:flex;flex-wrap:wrap;gap:0;margin:-.6vw}
+.source-card {width:calc(50% - 1.2vw);margin:.6vw}
+.quick-card {width:calc(33.333% - 1.2vw);margin:.6vw}
+.quick-section {margin-top:3vh}
+.controls-list {gap:0}
+.control-row {margin-bottom:1.1vh}
+.control-row .icon {margin-right:1.1vw}
+.tile-copy {gap:0}.tile-copy .detail {margin-top:.75vh}
+footer {gap:0}.status-dot {margin-right:.55vw}
+.source-card .icon {gap:0}.source-card .icon span {margin-left:.35vw}
+
+.content-grid.no-controls .source-grid {flex-wrap:nowrap}
+.content-grid.no-controls .source-card {flex:1;min-width:0;width:auto}

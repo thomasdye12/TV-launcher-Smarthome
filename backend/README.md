@@ -387,3 +387,8 @@ MONGO_DB=tv_launcher_example
 
 - `server.example.js` - complete Express + MongoDB example implementation.
 - `package.json` - minimal dependencies and start script.
+
+
+## Optional Samsung target
+
+Build the shared Samsung UI with `npm --prefix samsung ci && npm --prefix samsung run build` from the repository root. This server mounts it at `/samsung/` and supplies per-TV config/action routes. Commands are disabled unless `SAMSUNG_COMMAND_BASE_URL` and `SAMSUNG_COMMAND_PREFIXES` are configured. Read [Samsung setup and limitations](../samsung/README.md) before deployment; this is experimental, uses the same trusted-network boundary as this example backend, and does not implement Android native services.

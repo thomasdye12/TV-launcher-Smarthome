@@ -1,4 +1,5 @@
 import express from "express";
+import { createSamsungRouter } from "../samsung/server/router.mjs";
 import { MongoClient } from "mongodb";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -27,6 +28,16 @@ await client.connect();
 
 const db = client.db(dbName);
 const tvLauncher = db.collection("TVLauncher");
+
+// Optional Samsung target; build static assets with `cd samsung && npm ci && npm run build`.
+// Device commands are disabled unless an HTTPS base and path prefixes are explicitly configured.
+app.use('/samsung', createSamsungRouter({
+  express,
+  getConfig: async tvId => (await tvLauncher.findOne({tvId}, {projection:{_id:0,data:1}}))?.data ?? null,
+  commandBaseUrl: process.env.SAMSUNG_COMMAND_BASE_URL || '',
+  allowedPrefixes: (process.env.SAMSUNG_COMMAND_PREFIXES || '').split(',').map(x => x.trim()).filter(Boolean)
+}));
+
 
 function unixTime() {
   return Math.floor(Date.now() / 1000);
