@@ -131,7 +131,7 @@
     else if (code === 13) { event.preventDefault(); buttons[selected].click(); }
   }, true);
   document.addEventListener('visibilitychange', function () {
-    trace('visibility', 'hidden=' + document.hidden + ',viewing=' + viewing); 
+    trace('visibility', 'hidden=' + document.hidden + ',viewing=' + viewing);
     if (document.hidden && viewing) {
       try { window.tizen.tvwindow.hide(function () {}, function () {}); } catch (ignored) {}
       showMenu();
